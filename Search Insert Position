@@ -1,0 +1,12 @@
+class Solution:
+    def searchInsert(self,nums,target):
+        for i in nums:
+            if i==target:
+                return nums.index(target)
+            else:
+                nums.append(target)
+                nums=sorted(nums)
+                return nums.index(target)
+
+        
+        
