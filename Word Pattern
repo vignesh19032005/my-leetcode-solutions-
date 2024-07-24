@@ -1,0 +1,25 @@
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        words = s.split()
+        if len(words) != len(pattern):
+            return False
+
+        d = {}
+        i = j = 0
+        while i < len(pattern) and j < len(words):
+            char = pattern[i]
+            word = words[j]
+
+            if char not in d and word not in d.values():
+                d[char] = word
+                i += 1
+                j += 1
+            elif d.get(char) != word:
+                return False
+            else:
+                i += 1
+                j += 1
+
+        return i == len(pattern) and j == len(words)
+
+
