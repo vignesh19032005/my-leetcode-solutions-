@@ -1,0 +1,4 @@
+class Solution:
+    def superPow(self, a: int, b: list):
+        return pow(a, int(''.join([str(x) for x in b])), 1337)
+
